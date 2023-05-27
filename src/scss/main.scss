@@ -1,4 +1,6 @@
 @import './variables';
+@import './menu';
+@import './header';
 
 * {
     margin: 0;
@@ -9,110 +11,15 @@
 
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: auto 1fr;
     height: 100vh;
 }
 
-.menu {
-    position: relative;
-    background-color: black;
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
-        color: white;
-        padding: 35px 30px;
-        height: 100%;
-    }
-
-    &__header {
-        margin-bottom: 80px;
-    }
-
-    &__close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-    }
-    
-    &__list {
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-        font-weight: 500;
-        li {
-            display: flex;
-            gap: 13px;
-            color: $gray;
-            cursor: pointer;
-    
-            svg {
-                path {
-                    fill: $gray
-                }
-            }
-            &.menu__list--active {
-                color: white;
-                position: relative;
-                &::before {
-                    content: '';
-                    height: 100%;
-                    width: 4px;
-                    background-color: white;
-                    position: absolute;
-                    left: -30px;
-                }
-                svg {
-                    path {
-                        fill: white
-                    }
-                }
-            }
-        }
-        hr {
-            border-color: gray;
-        }
-    }
-    &__profile {
-        display: flex;
-        gap: 10px;
-        margin-top: auto;
-        p {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            span {
-                svg {
-                    margin-left: 12px;
-                }
-            }
-        }
-        &__email {
-            color: #747475;
-        }
-    }
-
-    &::before {
-        content: '';
-        background-color: gray;
-        width: 100%;
-        height: 1px;
-        top: 90px;
-        position: absolute;
-        z-index: 1;
-    }
-    &::after {
-        content: '';
-        background-color: gray;
-        width: 100%;
-        height: 1px;
-        position: absolute;
-        bottom: 130px;
-        z-index: 1;
-    }
-}
 
 .content {
     background-color: $gray;
     width: 100%;
+    &__container {
+        padding: 0px 64px;
+    }
 }
