@@ -1,0 +1,24 @@
+.heading {
+    margin: 35px 0;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__col-1 {
+        h1 {
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        p {
+            color: $gray;
+        }
+    }
+    &__col-2 {
+        display: flex;
+        gap: 19px;
+        font-weight: 800;
+        font-size: 22px;
+    }
+}

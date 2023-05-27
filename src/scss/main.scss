@@ -1,6 +1,7 @@
 @import './variables';
 @import './menu';
 @import './header';
+@import './content/heading';
 
 * {
     margin: 0;
@@ -15,7 +16,7 @@
     height: 100vh;
 }
 
-
+// content
 .content {
     background-color: $gray_light;
     width: 100%;
@@ -23,3 +24,7 @@
         padding: 0px 64px;
     }
 }
+
+// .heading {
+//     margin: 35px 0;
+// }
