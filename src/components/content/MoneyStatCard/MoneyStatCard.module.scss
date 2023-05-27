@@ -1,0 +1,42 @@
+@import 'scss/variables';
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    background-color: white;
+    padding: 18px;
+    &__heading {
+        color: $gray;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    &__sum {
+        font-weight: 600;
+        font-size: 18px;
+    }
+    p {
+        display: flex;
+        gap: 9px;
+    }
+    &__date {
+        color: $gray;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    &__percentage {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+        font-size: 12px;
+        &.green {
+            color: $green;
+        }
+        &.red {
+            color: $red;
+        }
+    }
+}
