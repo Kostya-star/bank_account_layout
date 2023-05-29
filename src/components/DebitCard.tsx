@@ -9,6 +9,7 @@ const svgs = [<ArrowLeftSVG />, <ArrowRightSVG />];
 
 export const DebitCard = () => {
   const [activeBtn, setActiveBtn] = useState(0);
+  const [isSwitcherOn, setSwitcherOn] = useState(true);
 
   return (
     <div className="card">
@@ -33,16 +34,21 @@ export const DebitCard = () => {
       </div>
       <div className="card__content">
         <div className="card__img">
-            {/* <img src={Svg} alt="" width='200' height='200'/> */}
+          {/* <img src={Svg} alt="" width='200' height='200'/> */}
           <CardImageSVG />
         </div>
         <div className="card__info">
-            <span className='card__balance-title'>Balance</span>
-            <span className='card__balance-sum'>$14,528,00</span>
-            <span className='card__currency-title'>Currency</span>
-            <span className='card__currency-type'>US Dollar</span>
-            <span className='card__deactivate'>Deactivate card</span>
-            <button>switcher</button>
+          <span className="card__balance-title">Balance</span>
+          <span className="card__balance-sum">$14,528,00</span>
+          <span className="card__currency-title">Currency</span>
+          <span className="card__currency-type">US Dollar</span>
+          <span className="card__deactivate-title">Deactivate card</span>
+          <div
+            className="card__deactivate-switcher"
+            onClick={() => setSwitcherOn(!isSwitcherOn)}
+          >
+            <span className={!isSwitcherOn ? 'switcher-off' : ''}></span>
+          </div>
         </div>
       </div>
     </div>
