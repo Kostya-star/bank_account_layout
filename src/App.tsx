@@ -5,6 +5,7 @@ import { Button } from './components/UI/Button/Button';
 import { Heading } from './components/content/Heading';
 import { MoneyStatCard } from './components/content/MoneyStatCard/MoneyStatCard';
 import './scss/main.scss';
+import { Chart } from 'components/Chart';
 
 function App() {
   return (
@@ -46,9 +47,14 @@ function App() {
                 <div className="column-1__debit-card">
                   <DebitCard />
                 </div>
+                <div className="column-1__chart">
+                  <Chart />
+                </div>
               </div>
 
-              <div className="column-2" style={{ backgroundColor: 'red' }}>COLUMN 2</div>
+              <div className="column-2" style={{ backgroundColor: 'red' }}>
+                COLUMN 2
+              </div>
             </div>
           </main>
         </div>
