@@ -6,5 +6,5 @@ interface IButtonProps {
 }
 
 export const Button: FC<IButtonProps> = ({ children }) => {
-  return <button className={styles.button}>{children} </button>;
+  return <button  className={styles.button}>{children} </button>;
 };

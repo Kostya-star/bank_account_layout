@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 import { ReactComponent as MenuDashboardSVG } from '../assets/menu_1.svg';
 import { ReactComponent as MenuAnalyticsSVG } from '../assets/menu_2.svg';
@@ -38,9 +38,8 @@ export const Menu = () => {
         </div>
         <div className="menu__list">
           {menuList.map((item, ind) => (
-            <>
+            <Fragment key={ind}>
               <li
-                key={ind}
                 className={isActive === ind ? 'menu__list--active' : ''}
                 onClick={() => setActive(ind)}
               >
@@ -48,7 +47,7 @@ export const Menu = () => {
                 {item.text}
               </li>
               {ind === 5 ? <hr /> : null}
-            </>
+            </Fragment>
           ))}
         </div>
         <div className="menu__profile">

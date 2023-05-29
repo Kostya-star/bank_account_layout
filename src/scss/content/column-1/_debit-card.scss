@@ -1,0 +1,79 @@
+.card {
+    background-color: white;
+    padding: 20px 18px;
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    &__heading {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        h3 {
+            font-size: 18px;
+        }
+        span {
+            font-weight: 400;
+            font-size: 12px;
+            color: $gray;
+        }
+    }
+    &__buttons {
+        display: flex;
+        gap: 10px;
+        button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: transparent;
+            border: 1px solid #EAEAEA;
+            cursor: pointer;
+            &.card__buttons--active {
+                border: 1px solid $gray;
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        gap: 26px;
+    }
+    &__img {
+        padding-right: 26px;
+        border-right: 1px solid #EAEAEA;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+    &__balance {
+        &-title {
+            font-size: 14px;
+            color: $gray;
+            margin-bottom: 8px;
+        }
+        &-sum {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+    }
+    &__currency {
+        &-title {
+            font-size: 14px;
+            color: $gray;
+            margin-bottom: 8px;
+        }
+        &-type {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+    }
+    &__deactivate {
+        font-size: 14px;
+        color: $gray;
+        margin-bottom: 8px;
+    }
+}
