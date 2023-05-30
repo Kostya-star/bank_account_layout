@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   LineChart,
   Line,
@@ -6,7 +5,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Dot,
+  ResponsiveContainer
 } from 'recharts';
 
 const data = [
@@ -20,8 +19,13 @@ const data = [
   { day: '', 'Money Income': 22000 },
 ];
 
-const CustomTooltip = (props: any) => {
-  return <div className="chart__tooltip">items: {props.payload.length}</div>;
+const CustomTooltip = ({ active, payload }: any) => {
+  if (active && payload && payload.length) {
+    const { value } = payload[0];
+    return <div className="chart__tooltip">${value}</div>;
+  }
+
+  return null;
 };
 
 const CustomDot = (props: any) => {
@@ -44,36 +48,15 @@ const CustomDot = (props: any) => {
         fill="black"
         stroke={stroke}
         strokeWidth={2}
-        style={{ filter: 'drop-shadow(0 0 2px black)' }}
       />
     </g>
   );
 };
 
-const chartTopBarList = ['1D', '1W', '1M', '6M', '1Y'];
-
 export const Chart = () => {
-  const [activeDate, setActiveDate] = useState(0);
   return (
-    <div className="chart">
-      <div className="chart__header">
-        <h3>Statistics</h3>
-        <ul className="chart__top-bar">
-          {chartTopBarList.map((item, ind) => {
-            return (
-              <li
-                key={ind}
-                className={activeDate === ind ? 'active' : ''}
-                onClick={() => setActiveDate(ind)}
-              >
-                {item}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-
-      <LineChart width={540} height={200} data={data}>
+    <ResponsiveContainer width='100%' height={200}>
+      <LineChart data={data}> 
         <Line
           type="monotone"
           dataKey="Money Income"
@@ -84,7 +67,12 @@ export const Chart = () => {
         />
         <CartesianGrid stroke="#ccc" vertical={false} strokeDasharray="5 5" />
 
-        <XAxis dataKey="day" axisLine={false} tickMargin={10} />
+        <XAxis
+          dataKey="day"
+          axisLine={false}
+          tickMargin={10}
+          tick={{ fontSize: 14 }}
+        />
         <YAxis
           domain={[0, 40000]}
           tickFormatter={(value) => `${value / 1000}K`}
@@ -94,11 +82,6 @@ export const Chart = () => {
         />
         <Tooltip content={<CustomTooltip />} />
       </LineChart>
-
-      <div className="chart__footer">
-        <span className="chart__footer__income">Money Income</span>
-        <span className="chart__footer__current">Current State</span>
-      </div>
-    </div>
+    </ResponsiveContainer>
   );
 };

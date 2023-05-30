@@ -9,7 +9,7 @@ import { ReactComponent as MenuSecuritiesSVG } from '../assets/menu_6.svg';
 import { ReactComponent as MenuHelpSVG } from '../assets/menu_7.svg';
 import { ReactComponent as MenuSettingsSVG } from '../assets/menu_8.svg';
 import { ReactComponent as MenuLogoSVG } from '../assets/logo.svg';
-import { ReactComponent as MenuAvatarSVG } from '../assets/avatar.svg';
+import { ReactComponent as MenuAvatarSVG } from '../assets/profile.svg';
 import { ReactComponent as MenuCloseSVG } from '../assets/close.svg';
 import { ReactComponent as ArrowDownSVG } from '../assets/arrow_down.svg';
 

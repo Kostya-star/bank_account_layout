@@ -1,11 +1,11 @@
-import { DebitCard } from 'components/DebitCard';
+import { DebitCard } from 'components/content/DebitCard';
 import { Header } from './components/Header';
 import { Menu } from './components/Menu';
-import { Button } from './components/UI/Button/Button';
 import { Heading } from './components/content/Heading';
 import { MoneyStatCard } from './components/content/MoneyStatCard/MoneyStatCard';
 import './scss/main.scss';
-import { Chart } from 'components/Chart';
+import { ChartWrapper } from 'components/content/Chart/ChartWrapper';
+import { Transactions } from 'components/content/Transactions';
 
 function App() {
   return (
@@ -48,12 +48,14 @@ function App() {
                   <DebitCard />
                 </div>
                 <div className="column-1__chart">
-                  <Chart />
+                  <ChartWrapper />
                 </div>
               </div>
 
-              <div className="column-2" style={{ backgroundColor: 'red' }}>
-                COLUMN 2
+              <div className="column-2">
+                <div className="column-2__transactions">
+                  <Transactions/>
+                </div>
               </div>
             </div>
           </main>

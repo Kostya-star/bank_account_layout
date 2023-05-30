@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from './UI/Button/Button';
+import { Button } from '../UI/Button/Button';
 import { ReactComponent as ArrowLeftSVG } from 'assets/arrow-left.svg';
 import { ReactComponent as ArrowRightSVG } from 'assets/arrow-right.svg';
 // import Svg from '../assets/debit-card.svg'

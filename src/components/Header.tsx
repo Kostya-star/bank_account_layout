@@ -1,5 +1,5 @@
 import { ReactComponent as BellSvg } from '../assets/bell.svg';
-import { ReactComponent as AvatarSvg } from '../assets/avatar.svg';
+import { ReactComponent as AvatarSvg } from '../assets/profile.svg';
 import { ReactComponent as ArrowDownSvg } from '../assets/arrow_down.svg';
 import { ReactComponent as LoupeSvg } from '../assets/loupe.svg';
 
