@@ -6,6 +6,7 @@ import { MoneyStatCard } from './components/content/MoneyStatCard/MoneyStatCard'
 import './scss/main.scss';
 import { ChartWrapper } from 'components/content/Chart/ChartWrapper';
 import { Transactions } from 'components/content/Transactions';
+import { Transfer } from 'components/content/Transfer';
 
 function App() {
   return (
@@ -55,6 +56,10 @@ function App() {
               <div className="column-2">
                 <div className="column-2__transactions">
                   <Transactions/>
+                </div>
+                
+                <div className="column-2__transfer">
+                  <Transfer/>
                 </div>
               </div>
             </div>

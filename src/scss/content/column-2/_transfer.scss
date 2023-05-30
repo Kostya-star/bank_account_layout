@@ -1,0 +1,98 @@
+.transfer {
+    background-color: white;
+    padding: 20px 18px;
+    border: 1px solid #EAEAEA;
+    border-radius: 12px;
+    // min-width: 415px;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        a {
+            font-weight: 500;
+            font-size: 12px;
+            color: $gray;
+        }
+    }
+    &__heading {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        h3 {
+            font-size: 18px;
+        }
+        span {
+            font-size: 12px;
+            color: $gray;
+            padding-left: 8px;
+            border-left: 0.5px solid $gray;
+        }
+    }
+    &__options {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 20px;
+        // overflow: hidden;
+        // width: 100vw; 
+        // max-width: 375px; 
+        // display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        // grid-gap: 12px;
+        // overflow: hidden;
+    }
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    &__card-input {
+        display: flex;
+        align-items: center;
+        position: relative;
+        &::before {
+            content: url('../../../assets/transfer-card-input.svg');
+            position: absolute;
+        }
+    }
+    &__money-input {
+        display: flex;
+        align-items: center;
+        position: relative;
+        &::before {
+            content: url('../../../assets/transfer-money-input.svg');
+            position: absolute;
+        }
+        span {
+            position: absolute;
+            right: 0;
+            font-size: 14px;
+            color: $gray;
+        }
+    }
+    &__proceed {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+    &__footer {
+        h5 {
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+        p {
+            font-weight: 500;
+            font-size: 12px;
+            color: $gray;
+        }
+    }
+}

@@ -26,7 +26,13 @@ export const Transaction: FC<ITransactionProps> = ({
         </div>
       </div>
 
-      <span className={`${style.transaction__totalSum} ${incoming ? style.transaction_incoming : ''}`}>{incoming ? '+' : '-'}${totalSum}</span>
+      <span
+        className={`${style.transaction__totalSum} ${
+          incoming ? style.transaction_incoming : ''
+        }`}
+      >
+        {incoming ? '+' : '-'}${totalSum}
+      </span>
     </div>
   );
 };

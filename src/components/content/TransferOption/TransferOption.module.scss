@@ -1,0 +1,31 @@
+@import 'scss/variables';
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 20px;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    white-space: nowrap;
+    &__card {
+        position: relative;
+        &::before {
+            content: url('../../../assets/card-debit-star.svg');
+            position: absolute;
+            top: -10px;
+            left: -15px;
+        }
+    }
+    p {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    &__type {
+        font-size: 14px;
+        color: $gray;
+    }
+    &__currency {
+    }
+}

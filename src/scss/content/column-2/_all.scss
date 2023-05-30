@@ -1,1 +1,11 @@
 @import './transactions';
+@import './transfer';
+
+.column-2 {
+    &__transactions {
+        margin-bottom: 14px;
+    }
+    &__transfer {
+
+    }
+}

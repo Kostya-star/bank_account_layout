@@ -1,0 +1,11 @@
+@import 'scss/variables';
+
+.input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $gray_light;
+    padding: 5px;
+    padding-left: 30px;
+    font-size: 14px;
+}
