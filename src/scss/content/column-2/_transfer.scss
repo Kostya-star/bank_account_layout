@@ -3,7 +3,7 @@
     padding: 20px 18px;
     border: 1px solid #EAEAEA;
     border-radius: 12px;
-    // min-width: 415px;
+    overflow: hidden;
 
     &__top {
         display: flex;
@@ -31,16 +31,34 @@
         }
     }
     &__options {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 20px;
-        // overflow: hidden;
-        // width: 100vw; 
-        // max-width: 375px; 
-        // display: grid;
-        // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        // grid-gap: 12px;
-        // overflow: hidden;
+        position: relative;
+        &__wrapper {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+    }
+    &__scroll {
+        &-left {
+            position: absolute;
+            top: 40%;
+            padding: 3px 5px;
+            background-color: white;
+            border-radius: 3px;
+            border: 1px solid #BFBFBF;
+            cursor: pointer;
+        }
+        &-right {
+            position: absolute;
+            top: 40%;
+            right: 0;
+            padding: 3px 5px;
+            background-color: white;
+            border-radius: 3px;
+            border: 1px solid #BFBFBF;
+            cursor: pointer;
+        }
     }
     &__inputs {
         display: flex;
@@ -95,4 +113,14 @@
             color: $gray;
         }
     }
+}
+
+.transfer__scroll-left.hidden,
+.transfer__scroll-right.hidden {
+  display: none;
+}
+
+.transfer__scroll-left.visible,
+.transfer__scroll-right.visible {
+  display: inline;
 }
