@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, FC } from 'react';
 
 import { ReactComponent as MenuDashboardSVG } from '../assets/menu_1.svg';
 import { ReactComponent as MenuAnalyticsSVG } from '../assets/menu_2.svg';
@@ -26,12 +26,27 @@ const menuList = [
   { svg: <MenuSettingsSVG />, text: 'Settings' },
 ];
 
-export const Menu = () => {
+// OPEN MENU WHEN IN MODAL
+interface IMenuProps {
+  isModal?: boolean;
+  toggleModal?: (val: boolean) => void;
+}
+
+export const Menu: FC<IMenuProps> = ({ isModal, toggleModal }) => {
   const [isActive, setActive] = useState(0);
   const [isHiddenMenu, setHiddenMenu] = useState(false);
 
+  const toggleCloseMenu = () => {
+    if (isModal && toggleModal) {
+      toggleModal(!isModal);
+    } else {
+      setHiddenMenu(!isHiddenMenu);
+    }
+  };
+
   return (
-    <menu className="menu">
+    // OPEN MENU WHEN IN MODAL
+    <menu className={`menu ${isModal ? 'menu--open-in-modal' : ''}`}>
       <div className={`menu__wrapper ${isHiddenMenu ? 'centered' : ''}`}>
         <div className="menu__header">
           {/* LOGO */}
@@ -40,7 +55,7 @@ export const Menu = () => {
           {/* MENU SWITCH BTN */}
           <span
             className={isHiddenMenu ? 'menu__open-hamburger' : `menu__close`}
-            onClick={() => setHiddenMenu(!isHiddenMenu)}
+            onClick={toggleCloseMenu}
           >
             {isHiddenMenu ? <MenuHamburgerSVG /> : <MenuCloseSVG />}
           </span>
@@ -61,16 +76,16 @@ export const Menu = () => {
             </Fragment>
           ))}
         </ul>
-        <div className={`menu__profile ${isHiddenMenu ? 'menu__profile--column' : ''}`}>
+        <div
+          className={`menu__profile ${
+            isHiddenMenu ? 'menu__profile--column' : ''
+          }`}
+        >
           <MenuAvatarSVG />
           <p>
             <span>
-              {
-                isHiddenMenu
-                ? 'Profile'
-                : 'Anna Karin'
-              }
-               <ArrowDownSVG />
+              {isHiddenMenu ? 'Profile' : 'Anna Karin'}
+              <ArrowDownSVG />
             </span>
 
             {/* USER EMAIL */}

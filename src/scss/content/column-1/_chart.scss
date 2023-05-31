@@ -4,7 +4,7 @@
     padding-right: 20px;
     border: 1px solid #EAEAEA;
     border-radius: 12px;
-    width: 100%;
+    // width: 100%;
 
     &__header {
         display: flex;
@@ -92,3 +92,13 @@
         }
     }
 }
+
+    // global
+    // .recharts {
+    //     &-wrapper {
+    //         width: 100%!important;
+    //     }
+    //     &-surface {
+    //         width: 100%!important;
+    //     }
+    // }

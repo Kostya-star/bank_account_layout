@@ -6,9 +6,6 @@
 .content {
     padding-bottom: 40px;
     &__columns {
-        // display: flex;
-        // gap: 20px;
-        // grid-template-columns: 60% 40%;
         // 60% for the first column of content and minmax(350px, auto) for the second column of content that conatins the transfer block 
         display: grid;
         grid-template-columns: 60% minmax(350px, auto);

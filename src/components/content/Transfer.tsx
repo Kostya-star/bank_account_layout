@@ -68,15 +68,15 @@ export const Transfer = () => {
           }`}
           onClick={() => onOptionsScroll('left')}
         >
-          <ArrowLeftSVG/>
+          <ArrowLeftSVG />
         </button>
         <button
           className={`transfer__scroll-right ${
             canScrollRight ? 'visible' : 'hidden'
           }`}
           onClick={() => onOptionsScroll('right')}
-          >
-          <ArrowRightSVG/>
+        >
+          <ArrowRightSVG />
         </button>
       </div>
 

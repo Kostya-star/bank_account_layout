@@ -1,0 +1,27 @@
+
+@media screen and (max-width: 1350px) {
+    .content {
+        &__columns {
+            grid-template-columns: minmax(550px, auto);
+            row-gap: 14px;
+        }
+    }
+  }
+
+@media screen and (max-width: 1000px) {
+    .menu {
+        display: none;
+        &--open-in-modal {
+            display: block;
+        }
+    
+    }
+
+    .header {
+        &__avatar {
+            span {
+                display: inline;
+            }
+        }
+    }
+  }

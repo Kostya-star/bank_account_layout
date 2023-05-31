@@ -2,6 +2,7 @@
     background-color: white;
     position: sticky;
     top: 0;
+    z-index: 1;
     &__wrapper {
         display: flex;
         justify-content: space-between;
@@ -64,5 +65,9 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        span {
+            display: none;
+            cursor: pointer;
+        }
     }
 }
