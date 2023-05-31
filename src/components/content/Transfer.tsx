@@ -29,7 +29,7 @@ export const Transfer = () => {
 
       if (scrollLeft && clientWidth && scrollWidth) {
         setCanScrollLeft(scrollLeft > 10);
-        setCanScrollRight(scrollLeft + clientWidth < scrollWidth);
+        setCanScrollRight(scrollLeft + clientWidth + 10 < scrollWidth);
       }
     };
     optionsRef.current?.addEventListener('scroll', handleScroll);

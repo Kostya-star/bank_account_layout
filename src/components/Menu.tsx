@@ -8,10 +8,12 @@ import { ReactComponent as MenuMoneyBoxSVG } from '../assets/menu_5.svg';
 import { ReactComponent as MenuSecuritiesSVG } from '../assets/menu_6.svg';
 import { ReactComponent as MenuHelpSVG } from '../assets/menu_7.svg';
 import { ReactComponent as MenuSettingsSVG } from '../assets/menu_8.svg';
-import { ReactComponent as MenuLogoSVG } from '../assets/logo.svg';
+import { ReactComponent as MenuBigLogoSVG } from '../assets/big-logo.svg';
+import { ReactComponent as MenuSmallLogoSVG } from '../assets/small-logo.svg';
 import { ReactComponent as MenuAvatarSVG } from '../assets/profile.svg';
 import { ReactComponent as MenuCloseSVG } from '../assets/close.svg';
 import { ReactComponent as ArrowDownSVG } from '../assets/arrow_down.svg';
+import { ReactComponent as MenuHamburgerSVG } from '../assets/menu-hamburger.svg';
 
 const menuList = [
   { svg: <MenuDashboardSVG />, text: 'Dashboard' },
@@ -26,17 +28,26 @@ const menuList = [
 
 export const Menu = () => {
   const [isActive, setActive] = useState(0);
+  const [isHiddenMenu, setHiddenMenu] = useState(false);
 
   return (
     <menu className="menu">
-      <div className="menu__wrapper">
+      <div className={`menu__wrapper ${isHiddenMenu ? 'centered' : ''}`}>
         <div className="menu__header">
-          <MenuLogoSVG />
-          <span className="menu__close">
-            <MenuCloseSVG />
+          {/* LOGO */}
+          {isHiddenMenu ? <MenuSmallLogoSVG /> : <MenuBigLogoSVG />}
+
+          {/* MENU SWITCH BTN */}
+          <span
+            className={isHiddenMenu ? 'menu__open-hamburger' : `menu__close`}
+            onClick={() => setHiddenMenu(!isHiddenMenu)}
+          >
+            {isHiddenMenu ? <MenuHamburgerSVG /> : <MenuCloseSVG />}
           </span>
+
+          {/* MENU LIST ITEMS */}
         </div>
-        <div className="menu__list">
+        <ul className="menu__list">
           {menuList.map((item, ind) => (
             <Fragment key={ind}>
               <li
@@ -44,19 +55,28 @@ export const Menu = () => {
                 onClick={() => setActive(ind)}
               >
                 {item.svg}
-                {item.text}
+                {isHiddenMenu ? null : item.text}
               </li>
               {ind === 5 ? <hr /> : null}
             </Fragment>
           ))}
-        </div>
-        <div className="menu__profile">
+        </ul>
+        <div className={`menu__profile ${isHiddenMenu ? 'menu__profile--column' : ''}`}>
           <MenuAvatarSVG />
           <p>
             <span>
-              Anna Karin <ArrowDownSVG />
+              {
+                isHiddenMenu
+                ? 'Profile'
+                : 'Anna Karin'
+              }
+               <ArrowDownSVG />
             </span>
-            <span className="menu__profile__email">annakarin@gmail.com</span>
+
+            {/* USER EMAIL */}
+            {isHiddenMenu ? null : (
+              <span className="menu__profile__email">annakarin@gmail.com</span>
+            )}
           </p>
         </div>
       </div>
