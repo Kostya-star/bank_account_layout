@@ -37,8 +37,8 @@ export const Menu: FC<IMenuProps> = ({ isModal, toggleModal }) => {
   const [isHiddenMenu, setHiddenMenu] = useState(false);
 
   const toggleCloseMenu = () => {
-    if (isModal && toggleModal) {
-      toggleModal(!isModal);
+    if (isModal) {
+      toggleModal?.(!isModal);
     } else {
       setHiddenMenu(!isHiddenMenu);
     }

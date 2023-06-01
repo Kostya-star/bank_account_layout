@@ -27,6 +27,10 @@
         }
     }
 
+    &__logo-big {
+        display: none;
+    }
+
     &__col-2 {
         display: flex;
         align-items: center;
@@ -58,7 +62,15 @@
               border-radius: 50%;
             }
           }
-          
+          &__loupe {
+            display: none;
+            cursor: pointer;
+            // &:hover {
+            //     .header__search-input {
+            //         display: block!important;
+            //     }
+            // }
+          }
     }
 
     &__avatar {

@@ -23,5 +23,25 @@
                 display: inline;
             }
         }
-    }
+        &__search-input {
+            display: none;
+        }
+        &__logo-big {
+            display: block;
+        }
+        &__col-2 {
+            &__loupe {
+                display: inline;
+                &:hover {
+                    // background-color: red;
+                    .header__search-input {
+                        display: block;
+                    }
+                    & > svg {
+                        display: none;
+                    }
+                }
+            }
+        }
   }
+}
