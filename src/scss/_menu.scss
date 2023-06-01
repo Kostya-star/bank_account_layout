@@ -47,12 +47,12 @@
 
     &__open-hamburger {
         position: absolute;
-        right: 5px;
         top: 5px;
-        background-color: $gray_light;
-        padding: 3px;
-        border-radius: 5px;
+        right: 5px;
         cursor: pointer;
+        svg {
+            width: 30px;
+        }
     }
     
     &__list {

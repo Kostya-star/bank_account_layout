@@ -2,7 +2,7 @@
 @media screen and (max-width: 1350px) {
     .content {
         &__columns {
-            grid-template-columns: minmax(550px, auto);
+            grid-template-columns: minmax(300px, auto);
             row-gap: 14px;
         }
     }
@@ -31,11 +31,15 @@
         }
         &__col-2 {
             &__loupe {
-                display: inline;
+                display: flex;
+                align-items: center;
+                position: relative;
                 &:hover {
-                    // background-color: red;
                     .header__search-input {
                         display: block;
+                        position: absolute;
+                        right: 0;
+                        z-index: 10;
                     }
                     & > svg {
                         display: none;
@@ -44,4 +48,93 @@
             }
         }
   }
+}
+
+@media screen and (max-width: 730px) {
+    .card {
+        &__content {
+            flex-direction: column;
+        }
+        &__img {
+            padding: 0;
+            border-right: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .column-1 {
+        &__top {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+    }
+    .heading {
+        &__col-1 {
+            p {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .content {
+        &__container {
+            padding: 0px 20px!important;
+        }
+    }
+    .header {
+        &__wrapper {
+            // flex-direction: row-reverse;
+            justify-content: center;
+        }
+        &__col-2 {
+            flex-direction: row-reverse;
+            // width: 100%;
+        }
+        &__logo-big {
+            display: none;
+        }
+    }
+
+    .heading {
+        &__wrapper {
+            flex-direction: column;
+        }
+    }
+
+    .card {
+        &__img {
+            svg {
+                width: 100%;
+            }
+        }
+    }
+
+    .chart {
+        &__header {
+            justify-content: center;
+            h3 {
+                display: none;
+            }
+        }
+    }
+
+    @mixin hideHeading {
+        &__heading {
+          span {
+            display: none;
+          }
+        }
+      }
+      
+      .transactions {
+        @include hideHeading;
+      }
+      
+      .transfer {
+        @include hideHeading;
+      }
 }

@@ -8,31 +8,38 @@ import { ReactComponent as MenuHamburgerSvg } from '../assets/menu-hamburger.svg
 import { ReactComponent as LogoBigSvg } from '../assets/logo-big-black.svg';
 import { Modal } from './UI/Modal/Modal';
 import { Menu } from './Menu';
+import { Input } from './UI/Input/Input';
 
 export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const renderModal = () =>
+    createPortal(
+      <Modal>
+        <Menu isModal={isMenuOpen} toggleModal={setMenuOpen} />
+      </Modal>,
+      document.body
+    );
 
   return (
     <header className="header">
       <div className="content__container">
         <div className="header__wrapper">
           <div className="header__logo-big">
-            <LogoBigSvg/>
+            <LogoBigSvg />
           </div>
           <div className="header__search-input">
-            <input type="text" placeholder="Search..." />
+            <Input type="text" placeholder="Search..." />
             <LoupeSvg />
           </div>
           <div className="header__col-2">
-
-          <span className='header__col-2__loupe'>
-            <LoupeSvg />
-          <div className="header__search-input">
-            <input type="text" placeholder="Search..." />
-            <LoupeSvg />
-          </div>
-          </span>
-
+            <span className="header__col-2__loupe">
+              <LoupeSvg />
+              <div className="header__search-input">
+                <Input type="text" placeholder="Search..." />
+                <LoupeSvg />
+              </div>
+            </span>
 
             <span className="header__col-2__notifications">
               <BellSvg />
@@ -47,19 +54,12 @@ export const Header = () => {
                 <MenuHamburgerSvg />
               </span>
             </div>
-
           </div>
         </div>
       </div>
 
       {/* RENDER MENU IN MODAL */}
-      {isMenuOpen &&
-        createPortal(
-          <Modal>
-            <Menu isModal={isMenuOpen} toggleModal={setMenuOpen} />
-          </Modal>,
-          document.body
-        )}
+      {isMenuOpen && renderModal()}
     </header>
   );
 };
